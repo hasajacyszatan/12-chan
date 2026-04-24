@@ -3,9 +3,25 @@
 <head>
 
     <title>12chan</title>
-
+    <style>
+        body{
+            display: flex;
+        }
+        div{
+            background-color: greenyellow;
+            width: 200px;
+            height: 200px;
+            margin: 20px;
+        }
+    </style>
 </head>
 <body>
-
+    {%for i in posts%}
+    <div>
+        <b>{{i.title}}</b>
+        <br>
+        {{i.content}}
+    </div>
+    {%endfor%}
 </body>
 </html>

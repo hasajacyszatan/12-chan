@@ -1,14 +1,5 @@
 from django.shortcuts import render
-posts = [
-    {
-        "title": "Post 1",
-        "content": "treść dupasdfsoiafoiasoieasfoiseiod"
-    },
-    {
-        "title": "Post 2",
-        "content": "treść postu 2 dupasdfsoiafoiasoieasfoiseiod"
-    }
-]
+from posty.models import Post
 def index(request):
-    liste = [1, 2, 3, 'pipa']
+    posts = Post.objects.all()
     return render(request, 'index.html', {'posts': posts})
