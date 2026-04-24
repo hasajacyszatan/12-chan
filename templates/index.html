@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Moja strona</title>
+</head>
+<body>
+    {{ posts.0.title }}
+    {% for i in posts %}
+        <b>{{ i.title }}</b>
+        <div>{{ i.content }}</div>
+    {% endfor %}
+</body>
+</html>
