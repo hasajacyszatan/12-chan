@@ -4,24 +4,43 @@
 
     <title>12chan</title>
     <style>
-        body{
-            display: flex;
+        header {
+            background-color: gray;
+            width: 100%;
+            font-size: 14px;
+            font-family: monospace;
         }
-        div{
-            background-color: greenyellow;
-            width: 200px;
+        body{
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        .post{
+            background-color: darkkhaki;
+            width: 80%;
             height: 200px;
             margin: 20px;
+
+        }
+        .posts{
+            display:flex ;
         }
     </style>
 </head>
 <body>
+    <header>
+        działy: 
+        {%for section in sections%}
+            {{section.name}}, 
+        {%endfor%}
+    </header>
+    <div class="posts">
     {%for i in posts%}
-    <div>
+    <pre class="post">
         <b>{{i.title}}</b>
         <br>
         {{i.content}}
-    </div>
+    </pre>
     {%endfor%}
+    </div>
 </body>
 </html>
