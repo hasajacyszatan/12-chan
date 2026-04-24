@@ -30,7 +30,7 @@
     <header>
         działy: 
         {%for section in sections%}
-            {{section.name}}, 
+            <a href="/section/{{section.name}}">{{section.name}}</a>, 
         {%endfor%}
     </header>
     <div class="posts">
