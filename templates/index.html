@@ -37,6 +37,9 @@
             {{i.content}}
         </div>
         </div>
+        {%if i.reply_set.all|length%}
+        <details>
+        <summary>Replies</summary>
         <div class="replies">
             {% for reply in i.reply_set.all %}
                 <div class="reply postcontainer">
@@ -51,6 +54,8 @@
                 </div>
             {% endfor %}
         </div>
+        </details>
+        {%endif%}
     </div>
     {% endfor %}
 </div>
