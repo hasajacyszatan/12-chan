@@ -7,9 +7,7 @@
 <body>
     <header>
         działy: 
-        {% for section in sections %}
-            <a href="/section/{{section.name}}">{{section.name}}</a>, 
-        {% endfor %}
+        {% for section in sections %}<a href="/section/{{section.name}}">{{section.name}}</a>/{% endfor %}
         <span class="login">
             <a href="/login">login</a>
             <a href="/register">register</a>

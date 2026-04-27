@@ -4,52 +4,108 @@ header {
     font-size: 14px;
     font-family: monospace;
 }
-body{
+
+body {
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     background-color: darkgrey;
-    margin: 0 !important;
-    padding: 0 !important;
+    margin: 0;
+    padding: 0;
 }
-.post{
+
+.post, .postform {
     border: solid 3px darkgoldenrod;
     background-color: lightgray;
     padding: 5px;
     width: 80%;
-    min-height: 200px;
     margin: 20px;
-
 }
-.created_at{
+
+.created_at {
     float: right;
 }
+
 .images img {
     border: double;
-    height: 100px;
+    height: 150px;
 }
-.reply{
+
+.reply {
     margin: 4px;
     padding: 5px;
     border: solid 1px whitesmoke;
     background-color: gainsboro;
 }
-.login{
+
+.login {
     float: right;
 }
-.postform form input, .postform form textarea {
-    margin-left: 30%;
-    margin-right: 30%;
-    flex:100%;
-}
-.postform form{
-    flex-wrap: wrap;
+
+details > summary {
+    padding: 10px 16px;
+    background-color: #d4b483;
+    cursor: pointer;
+    list-style: none;
+    font-family: monospace;
+    font-size: 13px;
+    user-select: none;
     display: flex;
     align-items: center;
-    align-content: center   ;
+    gap: 8px;
 }
-details > summary {
-  width: 100px;
-  padding: 10px;
-  background-color: white;
-  user-select: none;
-  list-style: none;
+
+details > summary::before {
+    content: "+";
+    font-size: 16px;
+}
+
+details[open] > summary::before {
+    content: "−";
+}
+
+.postform form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px 5px 5px;
+}
+
+.postform form input[type="text"],
+.postform form textarea {
+    width: 100%;
+    padding: 8px 12px;
+    font-size: 14px;
+    font-family: inherit;
+    background: #f5f0e8;
+    border: 1px solid darkgoldenrod;
+    box-sizing: border-box;
+}
+
+.postform form textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.postform form input[type="file"] {
+    font-size: 13px;
+}
+
+.postform form button {
+    align-self: flex-end;
+    padding: 8px 20px;
+    background-color: darkgoldenrod;
+    color: white;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.postform form button:hover {
+    background-color: goldenrod;
+}
+.postcontainer {
+    gap: 10px;
+    display: flex;
+}
+.content {
+    flex-grow: 1;
 }
