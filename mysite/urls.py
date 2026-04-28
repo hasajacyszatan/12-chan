@@ -6,5 +6,7 @@ urlpatterns = [
     path('', index),
     path('section/<str:dzial>', section),
     path('admin/', admin.site.urls),
-    path('post/', submitpost),
+    path('submitpost/', submitpost),
+    path('post/<int:post_id>', post),
+    path('submitreply/<int:post_id>', submitreply),
 ]

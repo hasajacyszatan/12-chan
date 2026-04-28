@@ -28,10 +28,26 @@ def submitpost(request):
     newpost.save()
     if uploaded_file:
         print("dostano plik")
-        # np. zapis do folderu
         with open(f"static/images/{uploaded_file.name}", "wb+") as destination:
             for chunk in uploaded_file.chunks():
                 destination.write(chunk)
         image = Image(image_path = '/static/images/'+uploaded_file.name, post = newpost)
         image.save()
     return redirect('/')
+def submitreply(request, post_id):
+    post = Post.objects.filter(id=post_id)[0]
+    content = request.POST.get("content")
+    uploaded_file = request.FILES.get('file')
+    newreply = Reply(content = content, reply_to = post)
+    newreply.save()
+    if uploaded_file:
+        print("dostano plik")
+        with open(f"static/images/{uploaded_file.name}", "wb+") as destination:
+            for chunk in uploaded_file.chunks():
+                destination.write(chunk)
+        image = Image(image_path = '/static/images/'+uploaded_file.name, reply = newreply)
+        image.save()
+    return redirect('/post/'+str(post_id))
+def post(request, post_id):
+    posts = Post.objects.filter(id=post_id)
+    return render(request, 'post.html', {'posts': posts})
