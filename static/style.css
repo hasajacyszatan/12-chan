@@ -114,6 +114,7 @@ details[open] > summary::before {
 .postcontainer {
     gap: 10px;
     display: flex;
+    flex-wrap: wrap;
 }
 .content {
     flex-grow: 1;

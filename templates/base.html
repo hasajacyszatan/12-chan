@@ -22,12 +22,14 @@
     <script>
         document.querySelectorAll('.images img').forEach(img => {
             img.addEventListener('click', () => {
-                if (img.style.width) {
+                if (img.style.height) {
                     img.style.width = '';
                     img.style.height = '';
+                    img.style.flexBasis = '';
                 } else {
-                    img.style.width = img.naturalWidth + 'px';
-                    img.style.height = img.naturalHeight + 'px';
+                    img.style.height = '60vh';
+                    img.style.width = '100%';
+                    img.style.flexBasis = '100%';
                 }
             });
         });
