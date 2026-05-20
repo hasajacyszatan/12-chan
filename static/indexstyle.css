@@ -1,11 +1,69 @@
 body {
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-    background-color: #fdf6e3;
+    background-color: #002b36;
+    color: #839496;
+    margin: 0;
+    padding: 20px;
 }
-.board{
-	
+.navauth {
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+.navauth a {
+    color: #268bd2;
+    text-decoration: none;
+}
+.navauth a:hover {
+    text-decoration: underline;
+}
+.boardsbox {
+    background-color: #073642;
+    border: 1px solid #586e75; 
+    margin: 0 auto;
+    max-width: 1000px;
+}
+.boardsheader {
+    background-color: #cb4b16;
+    color: #fdf6e3;
+    padding: 6px 12px;
+}
+.boardsheader h2 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold; 
+}
+.boardscontent {
+    display: grid;
+    grid-template-columns: repeat(autofill, minmax(220px, 1fr));
+    gap: 12px;
+    padding: 15px;
+}
+.board {
+    font-size: 13px;
+    line-height: 1.4;
+}
+.board a {
+    text-decoration: none;
+    color: #839496;
+}
+.boardname {
+    color: #dc322f;
+    font-weight: bold;
+}
+.boardname:hover {
+    text-decoration: underline;
+}
+.boarddesc {
+    color: #93a1a1;
+}
+.board a:hover .boardname {
+    text-decoration: underline;
+}
+.boardseparator {
+    color: #586e75;
 }
 .headercontainer{
 	display: flex;
 	justify-content: center;
+    margin-bottom: 20px;
 }

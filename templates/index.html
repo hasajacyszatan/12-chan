@@ -3,29 +3,37 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+	<title>UkenChan</title>
 	<link rel="stylesheet" href="/static/indexstyle.css">
 </head>
 <body>
 	<div class="headercontainer">
 	<header>
-	<img src="/static/logo.png" alt="" width="750" height="450">
+	<img src="/static/logorei.png" alt="logorei" width="300" height="150">
 	</header>
 	</div>
-	<div>
-		<a href="/accounts/login">Logowanie</a>
+	<div class="navauth">
+			<a href="/accounts/login">Logowanie</a>
 		<a href="/accounts/register">Rejestracja</a>
-		<h3>Dostępne działy</h3>
-		<hr>
+	</div>
+
+	<div>
+		<div class ="boardsbox">
+			<div class="boardsboxheader">
+				<h2>Dostępne Boardy: </h2>
+			</div>
+		<div class ="boardscontent">
 		{%for i in sections%}
 			<div class="board">
 				<a href="/section/{{i.name}}">
-			<b>{{i.name}}</b>
-			 - {{i.description}}
+			<span class="boardname">{{i.name}}</span>
+			<span class="boardseparator">-</span>
+			<span class="boarddesc"> {{i.description}}</span>
 			 	</a>
 			 </div>
-			<hr/>
 		{%endfor%}
+		</div>
 	</div>
+
 </body>
 </html>
